@@ -1,1 +1,1 @@
-Heather's spatial deconvoluation code
+Heather's spatial deconvolution code
