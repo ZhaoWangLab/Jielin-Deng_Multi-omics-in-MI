@@ -48,6 +48,9 @@ plotHeatmap<-function(spatialSample){
   #   geom_point()
   
   corMatrix<-cor(dataPlot3[,-1],dataPlot3[,-1])
+  filename<-paste0("~/_Projects/25.02.27_Jielin_Senescence/25.04.07_spatialCellTypes/9_downstreamAnalysis/1.3.2_corMatrix_",spatialSample,".rds")
+  saveRDS(corMatrix,filename)
+  
   corMatrixMelted<-reshape2::melt(corMatrix)
   colnames(corMatrixMelted)<-c("method1","method2","PCC")
   

@@ -41,6 +41,7 @@ createTableOfWeights<-function(spatialSample){
   #Process CellDART result.
   if(TRUE){
     filename<-paste0("~/_Projects/25.02.27_Jielin_Senescence/25.04.07_spatialCellTypes/1.3_resultCellDART/",spatialSample,"/cellfraction.csv")
+    
     resultCellDART<-readr::read_csv(filename)
     colnames(resultCellDART)[1]<-"cellName"
     range(rowSums(resultCellDART[,-1])) #Row sums are approximately 1.
@@ -82,7 +83,7 @@ createTableOfWeights<-function(spatialSample){
     temp2<-substr(temp,24,nchar(temp)) #Remove prefixes.
     colnames(resultCell2location)[-1]<-temp2
     
-    resultCell2location$method<-"cell2location" #1808*12.
+    resultCell2location$method<-"Cell2location" #1808*12. Jielin wants the initial letter capitalized.
     resultCell2location<-resultCell2location%>%select(cellName,method,all_of(cellTypesOrdered)) #1808*12.
   }
   

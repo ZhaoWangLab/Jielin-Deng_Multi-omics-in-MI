@@ -12,7 +12,7 @@ makeBarPlot<-function(spatialSample){
   
   #Convert cell2location numbers to proportions within spots.
   if(TRUE){
-    rowIndices<-which(tableOfWeights$method=="cell2location")
+    rowIndices<-which(tableOfWeights$method=="Cell2location")
     temp<-tableOfWeights[rowIndices,-c(1:2)]
     temp2<-temp/rowSums(temp)
     tableOfWeights[rowIndices,-c(1:2)]<-temp2
@@ -67,6 +67,7 @@ makeBarPlot<-function(spatialSample){
           plot.margin=margin(t=2,r=1.5,b=1.5,l=2,unit="lines"), #Plot margin (default is 5.5 points for t, r, b, and l).
           axis.text.x=element_text(angle=45,hjust=1,vjust=1,size=16), #See https://stackoverflow.com/questions/7263849/what-do-hjust-and-vjust-do-when-making-a-plot-using-ggplot.
           legend.key.height=unit(2.2,"lines"), #Legend key height.
+          legend.key.width=unit(2,"lines"), #Legend key width.
     )
   
   filename<-paste0("~/_Projects/25.02.27_Jielin_Senescence/25.04.07_spatialCellTypes/9_downstreamAnalysis/1.3_plots/barplot_",
