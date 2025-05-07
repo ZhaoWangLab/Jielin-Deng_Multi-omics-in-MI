@@ -10,7 +10,7 @@ makeBarPlot<-function(spatialSample){
   filename<-paste0("~/_Projects/25.02.27_Jielin_Senescence/25.04.07_spatialCellTypes/9_downstreamAnalysis/1.1_tableOfWeights_",spatialSample,".rds")
   tableOfWeights<-readRDS(filename)
   
-  #Convert cell2location numbers to proportions within spots.
+  #Convert Cell2location numbers to proportions within spots.
   if(TRUE){
     rowIndices<-which(tableOfWeights$method=="Cell2location")
     temp<-tableOfWeights[rowIndices,-c(1:2)]

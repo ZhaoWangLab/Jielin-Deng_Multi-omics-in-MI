@@ -71,7 +71,7 @@ createTableOfWeights<-function(spatialSample){
     resultTangram<-resultTangram%>%select(cellName,method,all_of(cellTypesOrdered)) #1808*12.
   }
   
-  #Process cell2location result.
+  #Process Cell2location result.
   if(TRUE){
     filename<-paste0("~/_Projects/25.02.27_Jielin_Senescence/25.04.07_spatialCellTypes/1.5_resultCell2location/",spatialSample,".csv")
     resultCell2location<-readr::read_csv(filename)

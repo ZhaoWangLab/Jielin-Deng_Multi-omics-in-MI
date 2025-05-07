@@ -10,9 +10,9 @@ plotHeatmap<-function(spatialSample){
   filename<-paste0("~/_Projects/25.02.27_Jielin_Senescence/25.04.07_spatialCellTypes/9_downstreamAnalysis/1.1_tableOfWeights_",spatialSample,".rds")
   tableOfWeights<-readRDS(filename)
   
-  #Convert cell2location numbers to proportions within spots.
+  #Convert Cell2location numbers to proportions within spots.
   if(TRUE){
-    rowIndices<-which(tableOfWeights$method=="cell2location")
+    rowIndices<-which(tableOfWeights$method=="Cell2location")
     temp<-tableOfWeights[rowIndices,-c(1:2)]
     temp2<-temp/rowSums(temp)
     tableOfWeights[rowIndices,-c(1:2)]<-temp2
@@ -43,8 +43,8 @@ plotHeatmap<-function(spatialSample){
     dataPlot3<-dataPlot2%>%spread(key=method,value=mean)
   }
   
-  # cor(dataPlot3$RCTD,dataPlot3$cell2location)
-  # dataPlot3%>%ggplot(aes(x=RCTD,y=cell2location))+
+  # cor(dataPlot3$RCTD,dataPlot3$Cell2location)
+  # dataPlot3%>%ggplot(aes(x=RCTD,y=Cell2location))+
   #   geom_point()
   
   corMatrix<-cor(dataPlot3[,-1],dataPlot3[,-1])

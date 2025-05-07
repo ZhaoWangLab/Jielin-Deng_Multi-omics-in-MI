@@ -9,7 +9,7 @@ cellTypesOrdered<-c("Fibroblasts","Macrophages","Epicardial cells","Cardiomyocyt
 
 plotMap<-function(spatialSample,methodCurr,indexOfMethod,scale){
   # spatialSample<-"p16"
-  # methodCurr<-"cell2location"
+  # methodCurr<-"Cell2location"
   # indexOfMethod<-5
   # scale<-"commonScale"
   
@@ -68,7 +68,7 @@ plotMap<-function(spatialSample,methodCurr,indexOfMethod,scale){
       p<-p+scale_fill_viridis_c(limits=limits,option="viridis") #Green.
     }else if(methodCurr=="Tangram"){
       p<-p+scale_fill_viridis_c(limits=limits,option="cividis") #Light yellow.
-    }else if(methodCurr=="cell2location"){
+    }else if(methodCurr=="Cell2location"){
       p<-p+scale_fill_viridis_c(limits=limits,option="magma") #Red.
     }
     
@@ -90,7 +90,7 @@ plotMap<-function(spatialSample,methodCurr,indexOfMethod,scale){
 
 
 spatialSamples<-c("p16","spider")
-methods<-c("SPOTlight","RCTD","CellDART","Tangram","cell2location")
+methods<-c("SPOTlight","RCTD","CellDART","Tangram","Cell2location")
 scales<-c("commonScale","individualScales")
 
 
